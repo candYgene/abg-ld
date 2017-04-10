@@ -9,14 +9,14 @@ docker build -t vos .
 
 **2. Start the Virtuoso server.**
 
-`docker run --name b4f -v $PWD:/tmp/share -p 8890:8890 -d vos`
+`docker run --name pigQTLdb-ld -v $PWD:/tmp/share -p 8890:8890 -d vos`
 
 **3. Prepare & ingest RDF data.**
 
 ```
 tar xvzf ../data/pigQTLdb-ld.tar.gz -C ../data
 mv ../data/rdf/* .
-docker exec b4f make all # check virtuoso.log for potential errors
+docker exec pigQTLdb-ld make all # check virtuoso.log for potential errors
 ```
  (other `make` rules: `install-pkgs`, `import-rdf`, `update-rdf`, `post-install`, `clean`)
 
