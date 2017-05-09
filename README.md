@@ -43,4 +43,4 @@ RDF graphs:IRIs (_T-Box_)
   * LBO: `http://purl.bioontology.org/ontology/LBO`
   * Uniprot Core: `http://purl.uniprot.org/core/`
 
-For further details visit the [wiki](https://github.com/DTL-FAIRData/ODEX4all-UseCases/wiki/Breed4Food) page.
+Further details can be found on the [wiki](https://github.com/candYgene/abg-ld/wiki/Breed4Food).
