@@ -1,1 +1,4 @@
-src/*.sql linguist-language=SQL
+*.sh linguist-vendored
+*file linguist-vendored
+*.py linguist-vendored
+*.sql linguist-language=SQL

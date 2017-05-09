@@ -24,7 +24,7 @@ docker exec pigQTLdb-ld make all # check virtuoso.log for potential errors
 
 Use `dba` for both account name and password.
 
-**5. Run [queries](https://github.com/DTL-FAIRData/ODEX4all-UseCases/wiki/Breed4Food:-example-SPARQL-queries) via Virtuoso [SPARQL endpoint](http://localhost:8890/sparql) or browse data via [Faceted Browser](http://localhost:8890/fct/) (no login required).**
+**5. Run queries via Virtuoso [SPARQL endpoint](http://localhost:8890/sparql) or browse data via [Faceted Browser](http://localhost:8890/fct/) (no login required).**
 
 RDF graphs:IRIs (_A-Box_)
   * Pig QTLdb: `http://www.animalgenome.org/QTLdb/pig`
@@ -43,4 +43,4 @@ RDF graphs:IRIs (_T-Box_)
   * LBO: `http://purl.bioontology.org/ontology/LBO`
   * Uniprot Core: `http://purl.uniprot.org/core/`
 
-Further details can be found on the [wiki](https://github.com/candYgene/abg-ld/wiki/Breed4Food).
+Further details can be found on the [wiki](https://github.com/candYgene/abg-ld/wiki/Home).
