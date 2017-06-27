@@ -1,5 +1,7 @@
 # Linked Data Platform for Animal Breeding & Genomics
 
+[![Build Status](https://travis-ci.org/candYgene/abg-ld.svg?branch=master)](https://travis-ci.org/candYgene/abg-ld)
+
 This software provides semantically integrated genotypic/phenotypic data on animals to enable ranking of candidate genes associated with traits of interest (e.g. nipple quantity in pig).
 
 **1. Clone this git repo.**
