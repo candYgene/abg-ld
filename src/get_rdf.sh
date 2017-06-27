@@ -3,6 +3,8 @@
 # Batch script to download (compressed) data in RDF and to write graph URIs into *.graph files
 # required for loading RDF into Virtuoso RDF Quad Store.
 
+set -ev
+
 ENSEMBL_RELEASE=86
 #UNIPROT_RELEASE=2016_11
 BIO2RDF_RELEASE=4
