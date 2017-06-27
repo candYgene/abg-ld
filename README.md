@@ -1,30 +1,43 @@
-# [Pig QTLdb](http://www.animalgenome.org/QTLdb/pig) Linked Data deployment
+# Linked Data Platform for Animal Breeding & Genomics
 
-**1. Build a [Docker](https://www.docker.com/) container with [Virtuoso Universal Server](http://virtuoso.openlinksw.com/) (open source edition).**
+This software provides semantically integrated genotypic/phenotypic data on animals to enable ranking of candidate genes associated with traits of interest (e.g. nipple quantity in pig).
+
+**1. Clone this git repo.**
+
+```
+git clone --recursive https://github.com/candYgene/abg-ld.git
+cd abg-ld
+```
+
+**2. Pull pre-built Docker image with [Virtuoso Universal Server](http://virtuoso.openlinksw.com/) from the [Docker Hub](https://hub.docker.com) registry.**
+
+`docker pull candygene/docker-virtuoso`
+
+Alternatively, you can build the image locally.
+
+`docker build -t candygene/docker-virtuoso docker-virtuoso`
+
+**3. Start the Virtuoso server.**
 
 ```
 cd src
-docker build -t vos .
+docker run --name abg-ld -v $PWD:/tmp/share -p 8890:8890 -d candygene/docker-virtuoso
 ```
 
-**2. Start the Virtuoso server.**
-
-`docker run --name pigQTLdb-ld -v $PWD:/tmp/share -p 8890:8890 -d vos`
-
-**3. Prepare & ingest RDF data.**
+**4. Prepare & ingest RDF data.**
 
 ```
 tar xvzf ../data/pigQTLdb-ld.tar.gz -C ../data
 mv ../data/rdf/* .
-docker exec pigQTLdb-ld make all # check virtuoso.log for potential errors
+docker exec abg-ld make all # check virtuoso.log for potential errors
 ```
- (other `make` rules: `install-pkgs`, `import-rdf`, `update-rdf`, `post-install`, `clean`)
+(other `make` rules: `install-pkgs`, `import-rdf`, `update-rdf`, `post-install`, `clean`)
 
-**4. [Login](http://localhost:8890/conductor) to running Virtuoso instance for admin tasks.**
+**5. [Login](http://localhost:8890/conductor) to running Virtuoso instance for admin tasks.**
 
 Use `dba` for both account name and password.
 
-**5. Run queries via Virtuoso [SPARQL endpoint](http://localhost:8890/sparql) or browse data via [Faceted Browser](http://localhost:8890/fct/) (no login required).**
+**6. Run queries via Virtuoso [SPARQL endpoint](http://localhost:8890/sparql) or browse data via [Faceted Browser](http://localhost:8890/fct/) (no login required).**
 
 RDF graphs:IRIs (_A-Box_)
   * Pig QTLdb: `http://www.animalgenome.org/QTLdb/pig`
