@@ -8,6 +8,11 @@ set -ev
 ENSEMBL_RELEASE=86
 #UNIPROT_RELEASE=2016_11
 BIO2RDF_RELEASE=4
+DATA_DIR=$1
+
+if [ "${DATA_DIR}" != "" ]; then
+	mkdir -p $DATA_DIR && cd $DATA_DIR
+fi
 
 # download ontologies
 curl --stderr - -LH "Accept: application/rdf+xml" -o faldo.rdf "http://biohackathon.org/resource/faldo.rdf" \
@@ -37,8 +42,6 @@ curl --stderr - -LH "Accept: application/rdf+xml" -o lbo.rdf "http://data.bioont
 curl --stderr - -LH "Accept: application/rdf+xml" -o uniprot_core.rdf "http://purl.uniprot.org/core/" \
 	&& echo "http://purl.uniprot.org/core/" > uniprot_core.rdf.graph
 
-gzip -9 *.rdf
-
 # download pig genome and proteome data from Ensembl and UniProt Reference Proteomes, respectively
 curl --stderr - -LO "ftp://ftp.ensembl.org/pub/release-${ENSEMBL_RELEASE}/rdf/sus_scrofa/sus_scrofa.ttl.gz" \
 	&& echo "http://www.ensembl.org/pig" > sus_scrofa.ttl.graph
@@ -59,3 +62,5 @@ curl --stderr - -LO "ftp://ftp.ensembl.org/pub/release-${ENSEMBL_RELEASE}/rdf/ho
 # download OMIM genotype-phenotype data via Bio2RDF
 curl --stderr - -LO "http://download.bio2rdf.org/release/${BIO2RDF_RELEASE}/omim/omim.nq.gz" \
         && echo "http://bio2rdf.org/omim_resource:bio2rdf.dataset.omim.R4" > omim.nq.graph
+
+gzip *.rdf
