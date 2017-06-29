@@ -1,0 +1,13 @@
+http://www.animalgenome.org/QTLdb/pig
+http://www.ensembl.org/pig
+http://www.uniprot.org/proteomes/pig
+http://bio2rdf.org/omim_resource:bio2rdf.dataset.omim.R4
+http://biohackathon.org/resource/faldo.rdf
+http://purl.obolibrary.org/obo/so.owl
+http://semanticscience.org/ontology/sio.owl
+http://purl.obolibrary.org/obo/ro.owl
+http://purl.obolibrary.org/obo/vt.owl
+http://purl.obolibrary.org/obo/cmo.owl
+http://purl.bioontology.org/ontology/LPT
+http://purl.bioontology.org/ontology/LBO
+http://purl.uniprot.org/core/
