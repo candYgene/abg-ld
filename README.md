@@ -6,7 +6,7 @@ This software provides semantically integrated genotypic/phenotypic data on anim
 
 **1. Clone this git repo.**
 
-`git clone --recursive https://github.com/candYgene/abg-ld.git`
+`git clone https://github.com/candYgene/abg-ld.git`
 
 **2. Start a [Docker container](https://hub.docker.com/r/candygene/docker-virtuoso/) with [Virtuoso Universal Server](http://virtuoso.openlinksw.com/) & ingest data in [RDF](https://www.w3.org/RDF/).**
 
