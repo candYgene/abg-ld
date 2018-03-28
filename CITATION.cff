@@ -13,4 +13,5 @@ authors:
 date-released: 2017-10-02
 commit: fd1672ea621d407ee97fd5d98ed3a5b62228c6f5
 repository-code: https://github.com/candYgene/abg-ld
+version: prerelease
 license: Apache-2.0
